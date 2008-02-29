@@ -70,7 +70,7 @@ trace("linktype:"+linkType+",linkvalue:"+linkValue+",linktarget:"+linkTarget);
 // and html file has been loaded
 public function LoadComplete(evt:Event)
 {
-_htmlsprite.Render();
+htmlsprite.Render();
 }
 
 // Load Stylesheet Complete

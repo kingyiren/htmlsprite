@@ -2,28 +2,34 @@
 = Introduction =
 
 Here's a quick way to setup the class
+Make sure that you embed the font somewhere in the file
 
 {{{
 import com.redurban.HTMLSprite
 
 var htmlsprite:HTMLSprite = new HTMLSprite();
+//
 //static debug mode on/off
 HTMLSprite.debug = true;
-
+//
 //Use this event when loading both stylesheet and html file
 htmlsprite.addEventListener(HTMLSprite.LOADCOMPLETE, Complete);
 
+//
 //This event will be dispatched when the rendering is complete
 htmlsprite.addEventListener(HTMLSprite.RENDERCOMPLETE, RenderComplete);
 
+//
 //Use this event when loading a stylesheet file only
 //Will be dispatched when the load is completed.
 htmlsprite.addEventListener(HTMLSprite.STYLECOMPLETE, StyleComplete);
 
+//
 //Use this event when loading a external html file only, 
 //Will be dispatched when the load is completed.
 htmlsprite.addEventListener(HTMLSprite.HTMLCOMPLETE, HtmlComplete);
 
+//
 //This event will be dispatched when an external link is click
 //<a href="event:internalEvent">Example</a>
 htmlsprite.addEventListener(HTMLSprite.LINK, Link);
@@ -47,5 +53,3 @@ stylesheet.setStyle("div",{fontFamily:"Arial",fontSize:"20px",backgroundColor:"#
 htmlsprite.stylesheet = stylesheet;
 htmlsprite.html = "Hello<br/>world!";
 htmlsprite.Render();
-
-

@@ -1,0 +1,51 @@
+#summary Gettings Started
+= Introduction =
+
+Here's a quick way to setup the class
+
+{{{
+import com.redurban.HTMLSprite
+
+var htmlsprite:HTMLSprite = new HTMLSprite();
+//static debug mode on/off
+HTMLSprite.debug = true;
+
+//Use this event when loading both stylesheet and html file
+htmlsprite.addEventListener(HTMLSprite.LOADCOMPLETE, Complete);
+
+//This event will be dispatched when the rendering is complete
+htmlsprite.addEventListener(HTMLSprite.RENDERCOMPLETE, RenderComplete);
+
+//Use this event when loading a stylesheet file only
+//Will be dispatched when the load is completed.
+htmlsprite.addEventListener(HTMLSprite.STYLECOMPLETE, StyleComplete);
+
+//Use this event when loading a external html file only, 
+//Will be dispatched when the load is completed.
+htmlsprite.addEventListener(HTMLSprite.HTMLCOMPLETE, HtmlComplete);
+
+//This event will be dispatched when an external link is click
+//<a href="event:internalEvent">Example</a>
+htmlsprite.addEventListener(HTMLSprite.LINK, Link);
+			
+// Example html file + css file
+// htmlsprite.Load("html/indexwithoutcss.htm", "html/style.css");
+			
+// Example stylesheet file only
+// htmlsprite.LoadStylesheet("html/style.css");
+			
+// Example html file only
+// htmlsprite.Load("html/index.htm");
+			
+// Example html text + stylesheet text
+
+var stylesheet:StyleSheet = new StyleSheet();
+stylesheet.setStyle(".header",{fontFamily:"Arial",color:"#000000"});
+stylesheet.setStyle("body",{fontFamily:"Arial"});
+stylesheet.setStyle("div",{fontFamily:"Arial",fontSize:"20px",backgroundColor:"#efefef"});
+
+htmlsprite.stylesheet = stylesheet;
+htmlsprite.html = "Hello<br/>world!";
+htmlsprite.Render();
+
+
